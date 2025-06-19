@@ -13,8 +13,6 @@ import auth_routes from "./src/routes/auth.routes.js";
 import cookieParser from 'cookie-parser';
 
 
-import cors from "cors";
-
 app.use(cors({
   origin: [
     'https://url-shorter-frontend-two.vercel.app',
