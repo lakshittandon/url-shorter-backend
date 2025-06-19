@@ -13,11 +13,12 @@ import auth_routes from "./src/routes/auth.routes.js";
 import cookieParser from 'cookie-parser';
 
 
+import cors from "cors";
 
-app.use(require('cors')({
+app.use(cors({
   origin: [
-    'https://url-shorter-frontend-two.vercel.app', // your deployed frontend
-    'http://localhost:5173' // for local development (optional)
+    'https://url-shorter-frontend-two.vercel.app',
+    'http://localhost:5173'
   ],
   credentials: true
 }));
