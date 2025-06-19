@@ -7,6 +7,17 @@ import {
   createShortUrlServiceWithUser
 } from '../services/short_url.service.js';
 
+import { listUserShortUrls } from '../services/short_url.service.js';
+
+export const getMyShortUrls = async (req, res) => {
+  try {
+    const urls = await listUserShortUrls(req.user.id);
+    res.json(urls);
+  } catch (e) {
+    res.status(500).json({ error: 'Failed to load URLs' });
+  }
+};
+
 export const createShortUrl = async (req, res) => {
   const { url } = req.body;
 
