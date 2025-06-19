@@ -14,7 +14,13 @@ import cookieParser from 'cookie-parser';
 
 
 
-app.use(cors());
+app.use(require('cors')({
+  origin: [
+    'https://url-shorter-frontend-two.vercel.app', // your deployed frontend
+    'http://localhost:5173' // for local development (optional)
+  ],
+  credentials: true
+}));
 app.use(express.json())
 app.use(express.urlencoded({extended : true}))
 app.use(cookieParser());  
