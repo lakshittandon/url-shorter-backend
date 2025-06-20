@@ -13,13 +13,15 @@ import auth_routes from "./src/routes/auth.routes.js";
 import cookieParser from 'cookie-parser';
 
 
-app.use(cors({
-  origin: [
-    'https://url-shorter-frontend-two.vercel.app',
-    'http://localhost:5173'
-  ],
-  credentials: true
-}));
+app.use(
+  cors({
+    origin: [
+      'https://url-shorter-frontend-git-main-lakshit-tandons-projects.vercel.app',
+      'http://localhost:5173'
+    ],
+    credentials: true
+  })
+);
 app.use(express.json())
 app.use(express.urlencoded({extended : true}))
 app.use(cookieParser());  
